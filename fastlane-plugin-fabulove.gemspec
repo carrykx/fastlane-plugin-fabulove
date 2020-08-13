@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'carry.kx@foxmail.com'
 
   spec.summary       = '"fabulove" distribution system fastlane plugin'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-fabulove"
+  spec.homepage      = "https://github.com/carrykx/fastlane-plugin-fabulove"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   # Don't add a dependency to fastlane or fastlane_re
   # since this would cause a circular dependency
 
-  # spec.add_dependency 'your-dependency', '~> 1.0.0'
+  spec.add_dependency 'httparty', '~> 0.18.1'
 
   spec.add_development_dependency('pry')
   spec.add_development_dependency('bundler')
