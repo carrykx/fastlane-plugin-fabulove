@@ -17,10 +17,10 @@ fastlane add_plugin fabulove
 fabulove(
       username: "username",
       password: "password",
-      base_url: "https://fabulove.com", // 域名
+      base_url: "https://fabulove.com", # 域名
       team_id: "xxxxxxxxxxx",
-      file_path: app_patch,  // ipa/apk包路径
-      keep_app_versions_num: 10  // 为节省服务器空间，设置保留的版本数量，如果超过则会自动删除最早的一个版本。如设0则不进行处理。
+      file_path: app_patch,  # ipa/apk包路径
+      keep_app_versions_num: 10  # 为节省服务器空间，设置保留的版本数量，如果超过则会自动删除最早的一个版本。如设0则不进行处理。
     )
 ```
 
