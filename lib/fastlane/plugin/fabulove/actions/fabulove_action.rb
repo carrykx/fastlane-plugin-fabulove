@@ -64,7 +64,7 @@ module Fastlane
 
       def self.delete_old_version (base_url, token, app_id, keep_num, team_id)
         authorization = "Bearer #{token}"
-        get_response = HTTParty.get("#{base_url}/api/apps/#{team_id}/#{app_id}/versions",{
+        get_response = HTTParty.get("#{base_url}/api/apps/#{team_id}/#{app_id}/versions?page=0&size=#{keep_num*2}",{
           :headers => {'Content-Type'=>'application/json', 'Authorization'=>authorization}
         })
 
@@ -85,7 +85,7 @@ module Fastlane
         end
         
         # 进行删除操作
-        app_version_info = versions_body['data'].last
+        app_version_info = versions_body['data'].first
         app_version_id = app_version_info['_id']
 
         delete_response = HTTParty.delete("#{base_url}/api/apps/#{team_id}/#{app_id}/versions/#{app_version_id}",{
